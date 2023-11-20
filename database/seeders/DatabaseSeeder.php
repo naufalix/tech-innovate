@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Admin;
+use App\Models\Job;
 use App\Models\User;
 use File;
 use Illuminate\Database\Seeder;
@@ -32,6 +33,14 @@ class DatabaseSeeder extends Seeder
                 "username" => $value->username,
                 "name" => $value->name,
                 "password" => bcrypt(123456),
+            ]);
+        }
+
+        $jobs = json_decode(File::get("database/data/jobs.json"));
+        foreach ($jobs as $key => $value) {
+            Job::create([
+                "name" => $value->name,
+                "tags" => $value->tags,
             ]);
         }
     }

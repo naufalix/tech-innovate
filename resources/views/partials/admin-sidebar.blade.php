@@ -31,7 +31,7 @@
                   </span>
                   <div class="menu-sub menu-sub-accordion">
                     <div class="menu-item">
-                      <a class="menu-link py-2" href="/admin/jobs">
+                      <a class="menu-link py-2" href="/admin/job">
                         <span class="menu-bullet">
                           <span class="bullet bullet-dot"></span>
                         </span>
@@ -39,7 +39,7 @@
                       </a>
                     </div>
                     <div class="menu-item">
-                      <a class="menu-link py-2" href="/admin/profiles">
+                      <a class="menu-link py-2" href="/admin/profile">
                         <span class="menu-bullet">
                           <span class="bullet bullet-dot"></span>
                         </span>
