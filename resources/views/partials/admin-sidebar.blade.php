@@ -2,7 +2,7 @@
           <!--begin::Logo-->
           <div class="docs-aside-logo flex-column-auto h-75px" id="kt_docs_aside_logo">
             <!--begin::Link-->
-            <a href="/dashboard" class="text-dark fs-2 fw-bold">
+            <a href="/admin" class="text-dark fs-2 fw-bold">
               {{-- <img alt="Logo" src="/assets/img/logo/logo.png" class="h-30px" /> --}}
               TechInnovate
             </a>
