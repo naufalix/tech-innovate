@@ -34,8 +34,8 @@ class UserAuthController extends Controller
 
 
     public function logout(){
-        if(Auth::check()){
-            Auth::logout();
+        if(Auth::guard('user')->check()){
+            Auth::guard('user')->logout();
         }
         return redirect('/dashboard/login');
     }
