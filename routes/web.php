@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\APIController;
+use App\Http\Controllers\Auth\UserAuthController;
+use App\Http\Controllers\Auth\AdminAuthController;
+use App\Http\Controllers\Admin\AdminHome;
+use App\Http\Controllers\Admin\AdminUser;
+use App\Http\Controllers\Dashboard\DashboardHome;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +20,38 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/dashboard');
+});
+
+// DASHBOARD AUTH
+Route::get('/dashboard/login', [UserAuthController::class, 'index'])->name('login');
+Route::post('/dashboard/login', [UserAuthController::class, 'login']);
+Route::get('/dashboard/logout', [UserAuthController::class, 'logout']);
+
+// DASHBOARD PAGE
+Route::group(['prefix'=> 'dashboard','middleware'=>['auth:user']], function(){
+    Route::get('/', [DashboardHome::class, 'index']);
+    Route::get('/home', [DashboardHome::class, 'index']);
+    Route::get('/profil', [DashboardProfile::class, 'index']);
+    
+    Route::post('/profil', [DashboardProfile::class, 'postHandler']);
+});
+
+// ADMIN AUTH
+Route::get('/admin/login', [AdminAuthController::class, 'index']);
+Route::post('/admin/login', [AdminAuthController::class, 'login']);
+Route::get('/admin/logout', [AdminAuthController::class, 'logout']);
+
+// ADMIN PAGE
+Route::group(['prefix'=> 'admin','middleware'=>['auth:admin']], function(){
+    Route::get('/', [AdminHome::class, 'index']);
+    Route::get('/home', [AdminHome::class, 'index']);
+    Route::get('/user', [AdminUser::class, 'index']);
+    
+    Route::post('/user', [AdminUser::class, 'postHandler']);
+});
+
+// API
+Route::group(['prefix'=> 'api'], function(){
+    Route::get('user/{user:id}', [APIController::class, 'User']);
 });
