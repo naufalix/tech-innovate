@@ -31,13 +31,16 @@
             @foreach ($instants as $i)
             @php
               $date = date_create($i->created_at);
+              if($jobs->find($i->jobs1)){$j1=$jobs->find($i->jobs1)->name;}else{$j1='-';}
+              if($jobs->find($i->jobs2)){$j2=$jobs->find($i->jobs2)->name;}else{$j2='-';}
+              if($jobs->find($i->jobs3)){$j3=$jobs->find($i->jobs3)->name;}else{$j3='-';}
             @endphp
             <tr>
               <td>{{ $loop->iteration }}</td>
               <td>{{ $i->prompt }}</td>
-              <td>{{ $jobs->find($i->jobs1)->name }}</td>
-              <td>{{ $jobs->find($i->jobs2)->name }}</td>
-              <td>{{ $jobs->find($i->jobs3)->name }}</td>
+              <td>{{ $j1 }}</td>
+              <td>{{ $j2 }}</td>
+              <td>{{ $j3 }}</td>
               <td>{{date_format($date,"M d, Y")}}</td>
               <td>
                 <a href="#" class="btn btn-icon btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#edit" onclick="edit({{ $i->id }})"><i class="bi bi-pencil-fill"></i></a>

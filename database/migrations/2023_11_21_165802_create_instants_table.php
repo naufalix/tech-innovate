@@ -16,9 +16,9 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->text('prompt');
-            $table->string('jobs1');
-            $table->string('jobs2');
-            $table->string('jobs3');
+            $table->string('jobs1')->nullable();
+            $table->string('jobs2')->nullable();
+            $table->string('jobs3')->nullable();
             $table->timestamps();
         });
     }
