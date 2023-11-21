@@ -39,7 +39,7 @@
                       </a>
                     </div>
                     <div class="menu-item">
-                      <a class="menu-link py-2" href="#">
+                      <a class="menu-link py-2" href="/dashboard/instant">
                         <span class="menu-bullet">
                           <span class="bullet bullet-dot"></span>
                         </span>

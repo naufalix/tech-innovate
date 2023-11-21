@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use App\Models\Instant;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -18,6 +19,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $guarded = ['id'];
+
+    public function instant(){
+        return $this->hasMany(Instant::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

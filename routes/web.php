@@ -8,18 +8,8 @@ use App\Http\Controllers\Admin\AdminHome;
 use App\Http\Controllers\Admin\AdminJob;
 use App\Http\Controllers\Admin\AdminUser;
 use App\Http\Controllers\Dashboard\DashboardHome;
+use App\Http\Controllers\Dashboard\DashboardInstant;
 use App\Http\Controllers\Dashboard\DashboardProfile;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 Route::get('/', function () {
     return redirect('/dashboard');
@@ -34,8 +24,10 @@ Route::get('/dashboard/logout', [UserAuthController::class, 'logout']);
 Route::group(['prefix'=> 'dashboard','middleware'=>['auth:user']], function(){
     Route::get('/', [DashboardHome::class, 'index']);
     Route::get('/home', [DashboardHome::class, 'index']);
+    Route::get('/instant', [DashboardInstant::class, 'index']);
     Route::get('/profile', [DashboardProfile::class, 'index']);
     
+    Route::post('/instant', [DashboardInstant::class, 'postHandler']);
     Route::post('/profile', [DashboardProfile::class, 'postHandler']);
 });
 
