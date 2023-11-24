@@ -8,6 +8,7 @@ class UserAuthController extends Controller
 {
 
     public function index(){
+        if(Auth::guard('admin')->check()){ return redirect('/admin/'); }
         return view('dashboard.login',[
             "title" => "TechInnovate | Login",
         ]);
