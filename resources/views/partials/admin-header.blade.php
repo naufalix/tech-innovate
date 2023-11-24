@@ -18,9 +18,7 @@
                 <!--end::Aside toggle-->
                 <!--begin::Logo-->
                 <div class="d-flex d-lg-none align-items-center flex-grow-1 flex-lg-grow-0 me-lg-15">
-                  <a href="#">
-                    <img alt="Logo" src="/assets/img/logo/logo.png" class="h-30px" />
-                  </a>
+                  <a href="#" class="text-dark fs-2 fw-bold">TechInnovate</a>
                 </div>
                 <!--end::Logo-->
                 <!--begin::Wrapper-->
@@ -30,27 +28,8 @@
                     <!--begin::Page title-->
                     <div class="docs-page-title d-flex flex-column flex-lg-row align-items-lg-center py-5 mb-lg-0" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_docs_content_container', 'lg': '#kt_docs_header_title'}">
                       <!--begin::Title-->
-                      <h1 class="d-flex align-items-center text-dark my-1 fs-4">Documentation
-                      <a href="../dist/documentation/getting-started/changelog.html" class="badge fw-bold fs-9 px-2 ms-2 badge-white text-hover-primary shadow-sm">v1.0.0</a></h1>
+                      <h1 class="d-flex align-items-center text-dark my-1 fs-4">{{$title}}</h1>
                       <!--end::Title-->
-                      <!--begin::Separator-->
-                      <span class="d-none d-lg-block bullet h-20px w-1px bg-secondary mx-4"></span>
-                      <!--end::Separator-->
-                      <!--begin::Breadcrumb-->
-                      <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-6 my-1">
-                        <!--begin::Item-->
-                        <li class="breadcrumb-item text-gray-600">Getting Started</li>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <li class="breadcrumb-item">
-                          <span class="bullet w-5px h-2px"></span>
-                        </li>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <li class="breadcrumb-item text-dark">Overview</li>
-                        <!--end::Item-->
-                      </ul>
-                      <!--end::Breadcrumb-->
                     </div>
                     <!--end::Page title-->
                   </div>
@@ -59,43 +38,6 @@
                   <div class="d-flex align-items-center">
                     <!--begin::Search-->
                     <div id="kt_docs_search" class="d-flex align-items-center w-125px w-md-175px w-lg-250px me-5" data-kt-search-keypress="true" data-kt-search-min-length="2" data-kt-search-enter="enter" data-kt-search-layout="menu" data-kt-menu-trigger="auto" data-kt-menu-permanent="true" data-kt-menu-placement="bottom-end">
-                      <!--begin::Form-->
-                      <form data-kt-search-element="form" class="w-100 position-relative" autocomplete="off">
-                        <!--begin::Hidden input(Added to disable form autocomplete)-->
-                        <input type="hidden" />
-                        <!--end::Hidden input-->
-                        <!--begin::Icon-->
-                        <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
-                        <span class="svg-icon svg-icon-2 svg-icon-gray-700 position-absolute top-50 translate-middle-y ms-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black" />
-                            <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black" />
-                          </svg>
-                        </span>
-                        <!--end::Svg Icon-->
-                        <!--end::Icon-->
-                        <!--begin::Input-->
-                        <input type="text" class="form-control form-control-solid h-40px bg-body ps-13 fs-7" name="search" value="" placeholder="Search documentation ..." data-kt-search-element="input" />
-                        <!--end::Input-->
-                        <!--begin::Spinner-->
-                        <span class="position-absolute top-50 end-0 translate-middle-y lh-0 d-none me-5" data-kt-search-element="spinner">
-                          <span class="spinner-border h-15px w-15px align-middle text-gray-400"></span>
-                        </span>
-                        <!--end::Spinner-->
-                        <!--begin::Reset-->
-                        <span class="btn btn-flush btn-active-color-primary position-absolute top-50 end-0 translate-middle-y lh-0 d-none me-4" data-kt-search-element="clear">
-                          <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
-                          <span class="svg-icon svg-icon-2 me-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                              <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
-                              <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
-                            </svg>
-                          </span>
-                          <!--end::Svg Icon-->
-                        </span>
-                        <!--end::Reset-->
-                      </form>
-                      <!--end::Form-->
                       <!--begin::Menu-->
                       <div data-kt-search-element="content" class="menu menu-sub menu-sub-dropdown w-300px w-md-350px py-7 ps-7 pe-5 overflow-hidden">
                         <!--begin::Wrapper-->
@@ -240,9 +182,10 @@
                             <!--end::Avatar-->
                             <!--begin::Username-->
                             <div class="d-flex flex-column">
-                              <div class="fw-bolder d-flex align-items-center fs-5">Max Smith
-                              <span class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2">Pro</span></div>
-                              <a href="#" class="fw-bold text-muted text-hover-primary fs-7">max@kt.com</a>
+                              <div class="fw-bolder d-flex align-items-center fs-5">
+                                {{ explode(" ",Auth::user()->name)[0] }}
+                              </div>
+                              <a href="#" class="fw-bold text-muted text-hover-primary fs-7">{{ Auth::user()->username }}</a>
                             </div>
                             <!--end::Username-->
                           </div>
@@ -251,29 +194,14 @@
                         <!--begin::Menu separator-->
                         <div class="separator my-2"></div>
                         <!--end::Menu separator-->
-                        <!--begin::Menu item-->
-                        <div class="menu-item px-5">
-                          <a href="../dist/account/overview.html" class="menu-link px-5">My Profile</a>
-                        </div>
-                        <!--end::Menu item-->
-                        <!--begin::Menu item-->
-                        <div class="menu-item px-5">
-                          <a href="#" class="menu-link px-5">
-                            <span class="menu-text">My Audit Logs</span>
-                            <span class="menu-badge">
-                              <span class="badge badge-light-danger badge-circle fw-bolder fs-7">3</span>
-                            </span>
-                          </a>
-                        </div>
-                        <!--end::Menu item-->
-     
+                        
                         <!--begin::Menu separator-->
                         <div class="separator my-2"></div>
                         <!--end::Menu separator-->
 
                         <!--begin::Menu item-->
                         <div class="menu-item px-5">
-                          <a href="logout" class="menu-link px-5">Sign Out</a>
+                          <a href="/admin/logout" class="menu-link px-5">Sign Out</a>
                         </div>
                         <!--end::Menu item-->
                         

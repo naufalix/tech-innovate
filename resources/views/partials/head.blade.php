@@ -52,35 +52,10 @@
         .markdown thead th{padding: 0.75rem !important; text-align: center}
         
         .menu-link i {
-    font-size: 16px;
-    width: 16px;
-    margin: 8px 12px 8px 0px;
-}
+            font-size: 16px;
+            width: 16px;
+            margin: 8px 12px 8px 0px;
+        }
 
-        .menu-hover-info .menu-item.hover > .menu-link:not(.disabled):not(.active),
-        .menu-hover-info .menu-item .menu-link:hover:not(.disabled):not(.active) {
-        transition: color 0.2s ease, background-color 0.2s ease;
-        color: #7239EA;
-        }
-        .menu-hover-info .menu-item.hover > .menu-link:not(.disabled):not(.active) .menu-title,
-        .menu-hover-info .menu-item .menu-link:hover:not(.disabled):not(.active) .menu-title {
-        color: #7239EA;
-        }
-        .menu-hover-info .menu-item.hover > .menu-link:not(.disabled):not(.active) .menu-icon i,
-        .menu-hover-info .menu-item .menu-link:hover:not(.disabled):not(.active) .menu-icon i {
-        color: #7239EA;
-        }
-        .menu-hover-info .menu-item.hover > .menu-link:not(.disabled):not(.active) .menu-icon .svg-icon svg [fill]:not(.permanent):not(g),
-        .menu-hover-info .menu-item .menu-link:hover:not(.disabled):not(.active) .menu-icon .svg-icon svg [fill]:not(.permanent):not(g) {
-        transition: fill 0.3s ease;
-        fill: #7239EA;
-        }
-        .menu-hover-info .menu-item.hover > .menu-link:not(.disabled):not(.active) .menu-icon .svg-icon svg:hover [fill]:not(.permanent):not(g),
-        .menu-hover-info .menu-item .menu-link:hover:not(.disabled):not(.active) .menu-icon .svg-icon svg:hover [fill]:not(.permanent):not(g) {
-        transition: fill 0.3s ease;
-        }
-        .menu-hover-info .menu-item.hover > .menu-link:not(.disabled):not(.active) .menu-bullet .bullet,
-        .menu-hover-info .menu-item .menu-link:hover:not(.disabled):not(.active) .menu-bullet .bullet {
-        background-color: #7239EA;
-        }
+        #myTable{min-width: 1000px;}
     </style>
