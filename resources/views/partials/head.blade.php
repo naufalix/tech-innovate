@@ -1,6 +1,6 @@
     
     <title>{{ $title }}</title> 
-    <meta name="description" content="Animelovers v2 Admin Panel" />
+    <meta name="description" content="TechInnovate | Career Recommendations" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
     <meta property="og:locale" content="en_US" />

@@ -20,9 +20,9 @@
             <tr class="fw-bold fs-6 text-gray-800 border-bottom border-gray-200">
               <th style="max-width: 20px">No.</th>
               <th>Prompt</th>
-              <th>Jobs 1</th>
-              <th>Jobs 2</th>
-              <th>Jobs 3</th>
+              <th style="width: 60px">Jobs 1</th>
+              <th style="width: 60px">Jobs 2</th>
+              <th style="width: 60px">Jobs 3</th>
               <th style="width: 100px">Date created</th>
               <th style="max-width: 100px;">Action</th>
             </tr>
