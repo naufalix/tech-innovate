@@ -9,8 +9,8 @@
     <div>
       <!--begin::Heading-->
       <div class="col-12 d-flex">
-        <h1 class="anchor fw-bolder mb-5" id="striped-rounded-bordered">History</h1>
-        <button class="ms-auto btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambah">Prompt</button>
+        <h1 class="anchor fw-bolder mb-5" id="striped-rounded-bordered">Data rekomendasi</h1>
+        <button class="ms-auto btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambah">Tambah</button>
       </div>
       <!--end::Heading-->
       <!--begin::Block-->
@@ -18,12 +18,12 @@
         <table id="myTable" class="table table-striped table-hover table-rounded border gs-7">
           <thead>
             <tr class="fw-bold fs-6 text-gray-800 border-bottom border-gray-200">
-              <th style="max-width: 20px">No.</th>
-              <th>Prompt</th>
-              <th style="width: 60px">Jobs 1</th>
-              <th style="width: 60px">Jobs 2</th>
-              <th style="width: 60px">Jobs 3</th>
-              <th style="width: 100px">Date created</th>
+              <th style="max-width: 25px">No.</th>
+              <th>Deskripsi</th>
+              <th style="width: 70px">Jobs 1</th>
+              <th style="width: 70px">Jobs 2</th>
+              <th style="width: 70px">Jobs 3</th>
+              <th style="width: 110px">Date created</th>
               <th style="max-width: 100px;">Action</th>
             </tr>
           </thead>
@@ -43,8 +43,7 @@
               <td>{{ $j3 }}</td>
               <td>{{date_format($date,"M d, Y")}}</td>
               <td>
-                <a href="#" class="btn btn-icon btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#edit" onclick="edit({{ $i->id }})"><i class="bi bi-pencil-fill"></i></a>
-                <a href="#" class="btn btn-icon btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#body" onclick="editbody({{ $i->id }})"><i class="fa fa-times"></i></a>
+                <a href="#" class="btn btn-icon btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#hapus" onclick="hapus({{ $i->id }})"><i class="fa fa-times"></i></a>
               </td>
             </tr>
             @endforeach
@@ -62,7 +61,7 @@
   <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h3 class="modal-title">Write a prompt</h3>
+          <h3 class="modal-title">Tambah rekomendasi karir</h3>
           <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
             <i class="bi bi-x-lg"></i>
           </div>
@@ -72,14 +71,14 @@
           <div class="modal-body">
             <div class="row g-9 mb-8">
               <div class="col-12">
-                <label class="required fw-bold mb-2">Prompt</label>
-                <textarea class="form-control" name="prompt" rows="10" maxlength="500" required placeholder="I'm a web developer with various experience"></textarea>
+                <label class="required fw-bold mb-2">Deskripsikan diri anda</label>
+                <textarea class="form-control" name="prompt" rows="10" maxlength="500" required placeholder="Saya seorang mahasiswa sistem informasi tertarik pada data sains..."></textarea>
               </div>
             </div>
           </div>
           
           <div class="modal-footer">
-            <button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal">Cancel</button>
+            <button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal">Batal</button>
             <button type="submit" class="btn btn-primary" name="submit" value="store">Submit</button>
           </div>
         </form>

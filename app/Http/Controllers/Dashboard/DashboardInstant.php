@@ -13,7 +13,7 @@ class DashboardInstant extends Controller
     
     public function index(){
         return view('dashboard.instant',[
-            "title" => "Dashboard | Instant Recommendation",
+            "title" => "Dashboard | Rekomendasi Karir",
             "instants" => Instant::whereUserId(auth()->user()->id)->get(),
             "jobs" => Job::all(),
         ]);

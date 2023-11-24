@@ -24,7 +24,12 @@
                     <span class="menu-title menu-icon"><i class="fa fa-dashboard"></i> Dashboard</span>
                   </a>
                 </div>
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                <div class="menu-item">
+                  <a class="menu-link py-2" href="/dashboard/instant">
+                    <span class="menu-title menu-icon"><i class="mdi mdi-thumb-up"></i> Recommencations</span>
+                  </a>
+                </div>
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion d-none">
                   <span class="menu-link py-2">
                     <span class="menu-title menu-icon"><i class="mdi mdi-thumb-up"></i> Recommencations</span>
                     <span class="menu-arrow"></span>
@@ -54,9 +59,6 @@
                   </a>
                 </div>
                 <br>
-
-                
-
               </div>
               <!--end::Menu-->
             </div>
