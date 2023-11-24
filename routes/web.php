@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\APIController;
 use App\Http\Controllers\Auth\UserAuthController;
 use App\Http\Controllers\Auth\AdminAuthController;
+use App\Http\Controllers\Admin\AdminAdmin;
 use App\Http\Controllers\Admin\AdminHome;
 use App\Http\Controllers\Admin\AdminJob;
 use App\Http\Controllers\Admin\AdminUser;
@@ -39,16 +40,19 @@ Route::get('/admin/logout', [AdminAuthController::class, 'logout']);
 // ADMIN PAGE
 Route::group(['prefix'=> 'admin','middleware'=>['auth:admin']], function(){
     Route::get('/', [AdminHome::class, 'index']);
+    Route::get('/admin', [AdminAdmin::class, 'index']);
     Route::get('/home', [AdminHome::class, 'index']);
     Route::get('/job', [AdminJob::class, 'index']);
     Route::get('/user', [AdminUser::class, 'index']);
     
+    Route::post('/admin', [AdminAdmin::class, 'postHandler']);
     Route::post('/job', [AdminJob::class, 'postHandler']);
     Route::post('/user', [AdminUser::class, 'postHandler']);
 });
 
 // API
 Route::group(['prefix'=> 'api'], function(){
-    Route::get('user/{user:id}', [APIController::class, 'User']);
-    Route::get('job/{job:id}', [APIController::class, 'Job']);
+    Route::get('admin/{admin:id}', [APIController::class, 'admin']);
+    Route::get('job/{job:id}', [APIController::class, 'job']);
+    Route::get('user/{user:id}', [APIController::class, 'user']);
 });

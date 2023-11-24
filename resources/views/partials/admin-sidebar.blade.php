@@ -38,15 +38,12 @@
                         <span class="menu-title">Jobs Data</span>
                       </a>
                     </div>
-                    <div class="menu-item">
-                      <a class="menu-link py-2" href="/admin/profile">
-                        <span class="menu-bullet">
-                          <span class="bullet bullet-dot"></span>
-                        </span>
-                        <span class="menu-title">Profiles Data</span>
-                      </a>
-                    </div>
                   </div>
+                </div>
+                <div class="menu-item">
+                  <a class="menu-link py-2" href="/admin/admin">
+                    <span class="menu-title menu-icon"><i class="mdi mdi-account-key fs-3"></i> Admin Settings</span>
+                  </a>
                 </div>
                 <div class="menu-item">
                   <a class="menu-link py-2" href="/admin/user">
