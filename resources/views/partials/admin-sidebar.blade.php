@@ -24,6 +24,11 @@
                     <span class="menu-title menu-icon"><i class="fa fa-dashboard"></i> Dashboard</span>
                   </a>
                 </div>
+                <div class="menu-item">
+                  <a class="menu-link py-2" href="/admin/instant">
+                    <span class="menu-title menu-icon"><i class="mdi mdi-thumb-up fs-3"></i> Recommendations</span>
+                  </a>
+                </div>
                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                   <span class="menu-link py-2">
                     <span class="menu-title menu-icon"><i class="mdi mdi-database"></i> Data Source</span>
