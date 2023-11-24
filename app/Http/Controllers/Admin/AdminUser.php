@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AdminUser extends Controller
 {
@@ -16,23 +17,20 @@ class AdminUser extends Controller
     }
 
     public function postHandler(Request $request){
-        if(!Privilege::get(6)){
-            return redirect('/dev/home')->with("info","You dont have access");
-        }
         if($request->submit=="store"){
             $res = $this->store($request);
-            return redirect('/dev/admin')->with($res['status'],$res['message']);
+            return back()->with($res['status'],$res['message']);
         }
         if($request->submit=="update"){
             $res = $this->update($request);
-            return redirect('/dev/admin')->with($res['status'],$res['message']);
+            return back()->with($res['status'],$res['message']);
         }
         if($request->submit=="destroy"){
             $res = $this->destroy($request);
-            return redirect('/dev/admin')->with($res['status'],$res['message']);
+            return back()->with($res['status'],$res['message']);
             // return redirect('/dashboard/user')->with("info","Fitur hapus sementara dinonaktifkan");
         }else{
-            return redirect('/dev/admin')->with("info","Submit not found");
+            return back()->with("info","Submit not found");
         }
     }
 
@@ -41,20 +39,20 @@ class AdminUser extends Controller
             'name'=>'required',
             'username' => 'required',
             'password' => 'required',
-            'status' => 'required',
-            'privilege'=>'required',
         ]);
         $validatedData['password'] = Hash::make($validatedData['password']);
-        $validatedData['privilege'] = implode(",",$validatedData['privilege']);
-        //dd($validatedData);
+        $validatedData['education'] = $request['education'];
+        $validatedData['experience'] = $request['experience'];
+        $validatedData['passion'] = $request['passion'];
+        $validatedData['skill'] = $request['skill'];
 
         // Check Username
-        if(!Admin::whereUsername($request->username)->first()){
+        if(!User::whereUsername($request->username)->first()){
             // Create new user
-            Admin::create($validatedData);
-            return ['status'=>'success','message'=>'Admin added successfully'];
+            User::create($validatedData);
+            return ['status'=>'success','message'=>'User berhasil ditambahkan'];
         }else{
-            return ['status'=>'error','message'=>'Username already taken'];
+            return ['status'=>'error','message'=>'Username sudah terpakai'];
         }
     }
 
@@ -63,35 +61,36 @@ class AdminUser extends Controller
             'id'=>'required|numeric',
             'name'=>'required',
             'username' => 'required',
-            'status' => 'required',
-            'privilege'=>'required',
         ]);
-        $validatedData['privilege'] = implode(",",$validatedData['privilege']);
+        $validatedData['education'] = $request['education'];
+        $validatedData['experience'] = $request['experience'];
+        $validatedData['passion'] = $request['passion'];
+        $validatedData['skill'] = $request['skill'];
 
-        $admin = Admin::find($request->id);
-        $oldUsername = $admin->username;
+        $user = User::find($request->id);
+        $oldUsername = $user->username;
         $newUsername = $request->username;
         
         //Check if password empty
         if(!$request->password){
-            $validatedData['password'] = $admin->password;
+            $validatedData['password'] = $user->password;
         }else{
             $validatedData['password'] = Hash::make($request->password);
         }
         
-        //Check if the admin is found
-        if($admin){
+        //Check if the User is found
+        if($user){
             //Check username
             if($newUsername!=$oldUsername){
-                if(Admin::whereUsername($request->username)->first()){
-                    return ['status'=>'error','message'=>'Username already taken'];
+                if(User::whereUsername($request->username)->first()){
+                    return ['status'=>'error','message'=>'Username sudah terpakai'];
                 }
             }
-            // Update admin
-            $admin->update($validatedData);   
-            return ['status'=>'success','message'=>'Admin updated successfully']; 
+            // Update User
+            $user->update($validatedData);   
+            return ['status'=>'success','message'=>'User berhasil diupdate']; 
         }else{
-            return ['status'=>'error','message'=>'Admin not found'];
+            return ['status'=>'error','message'=>'User tidak ditemukan'];
         }
     }
 
@@ -101,14 +100,14 @@ class AdminUser extends Controller
             'id'=>'required|numeric',
         ]);
 
-        $admin = Admin::find($request->id);
+        $user = User::find($request->id);
 
-        //Check if the admin is found
-        if($admin){
-            Admin::destroy($request->id);    // Delete admin
-            return ['status'=>'success','message'=>'Admin deleted successfully'];
+        //Check if the User is found
+        if($user){
+            User::destroy($request->id);    // Delete User
+            return ['status'=>'success','message'=>'User berhasil dihapus'];
         }else{
-            return ['status'=>'error','message'=>'Admin not found'];
+            return ['status'=>'error','message'=>'User tidak ditemukan'];
         }
     }
 }
