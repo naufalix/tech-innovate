@@ -26,6 +26,11 @@
                 </div>
                 <div class="menu-item">
                   <a class="menu-link py-2" href="/admin/instant">
+                    <span class="menu-title menu-icon"><i class="mdi mdi-note-text fs-3"></i> Survey Result</span>
+                  </a>
+                </div>
+                <div class="menu-item">
+                  <a class="menu-link py-2" href="/admin/instant">
                     <span class="menu-title menu-icon"><i class="mdi mdi-thumb-up fs-3"></i> Recommendations</span>
                   </a>
                 </div>
@@ -41,6 +46,14 @@
                           <span class="bullet bullet-dot"></span>
                         </span>
                         <span class="menu-title">Jobs Data</span>
+                      </a>
+                    </div>
+                    <div class="menu-item">
+                      <a class="menu-link py-2" href="/admin/question">
+                        <span class="menu-bullet">
+                          <span class="bullet bullet-dot"></span>
+                        </span>
+                        <span class="menu-title">Question</span>
                       </a>
                     </div>
                   </div>
