@@ -20,7 +20,8 @@
               <th style="max-width: 25px">No.</th>
               <th>Username</th>
               <th>Name</th>
-              <th>Rekomendasi</th>
+              <th>Instant R</th>
+              <th>Survey</th>
               <th>Date created</th>
               <th style="max-width: 100px;">Action</th>
             </tr>
@@ -34,9 +35,8 @@
               <td>{{ $loop->iteration }}</td>
               <td>{{ $u->username }}</td>
               <td>{{ $u->name }}</td>
-              <td>
-                <span class="badge badge-success">{{ count($u->instant) }}</span>
-              </td>
+              <td><span class="badge badge-success">{{ count($u->instant) }}</span></td>
+              <td><span class="badge badge-primary">{{ count($u->survey) }}</span></td>
               <td>{{date_format($date,"M d, Y")}}</td>
               <td>
                 <a href="#" class="btn btn-icon btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#edit" onclick="edit({{ $u->id }})"><i class="bi bi-pencil-fill"></i></a>

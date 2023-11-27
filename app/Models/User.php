@@ -2,6 +2,7 @@
 
 namespace App\Models;
 use App\Models\Instant;
+use App\Models\Survey;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -22,6 +23,9 @@ class User extends Authenticatable
 
     public function instant(){
         return $this->hasMany(Instant::class);
+    }
+    public function survey(){
+        return $this->hasMany(Survey::class);
     }
 
     /**
