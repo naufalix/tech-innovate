@@ -27,12 +27,13 @@
   {"code": 705, "y": 805, "n": 806, "name": "saya lebih suka bekerja dengan melihat gambaran besar"},
   {"code": 706, "y": 806, "n": 807, "name": "saya lebih suka bekerja dengan detail"},
   {"code": 707, "y": 807, "n": 808, "name": "saya lebih suka bekerja pada proyek jangka panjang"},
-  {"code": 801, "y": "end", "n": "end", "name": "Saya lebih suka memiliki jadwal kerja yang tetap"},
-  {"code": 802, "y": "end", "n": "end", "name": "Saya lebih suka memiliki jadwal kerja yang fleksibel"},
-  {"code": 803, "y": "end", "n": "end", "name": "Saya lebih suka bekerja dalam lingkungan yang tenang"},
-  {"code": 804, "y": "end", "n": "end", "name": "Saya lebih suka bekerja dalam lingkungan yang penuh energi"},
-  {"code": 805, "y": "end", "n": "end", "name": "Saya lebih suka bekerja pada satu tugas pada satu waktu"},
-  {"code": 806, "y": "end", "n": "end", "name": "Saya lebih suka bekerja dengan multitasking?"},
-  {"code": 807, "y": "end", "n": "end", "name": "Saya lebih suka bekerja dalam lingkungan yang terstruktur"},
-  {"code": 808, "y": "end", "n": "end", "name": "Saya lebih suka bekerja dalam lingkungan yang lebih santai"}
+  {"code": 801, "y": 999, "n": 999, "name": "Saya lebih suka memiliki jadwal kerja yang tetap"},
+  {"code": 802, "y": 999, "n": 999, "name": "Saya lebih suka memiliki jadwal kerja yang fleksibel"},
+  {"code": 803, "y": 999, "n": 999, "name": "Saya lebih suka bekerja dalam lingkungan yang tenang"},
+  {"code": 804, "y": 999, "n": 999, "name": "Saya lebih suka bekerja dalam lingkungan yang penuh energi"},
+  {"code": 805, "y": 999, "n": 999, "name": "Saya lebih suka bekerja pada satu tugas pada satu waktu"},
+  {"code": 806, "y": 999, "n": 999, "name": "Saya lebih suka bekerja dengan multitasking?"},
+  {"code": 807, "y": 999, "n": 999, "name": "Saya lebih suka bekerja dalam lingkungan yang terstruktur"},
+  {"code": 808, "y": 999, "n": 999, "name": "Saya lebih suka bekerja dalam lingkungan yang lebih santai"},
+  {"code": 999, "y": 999, "n": 999, "name": "Asesmen telah selesai"}
 ]

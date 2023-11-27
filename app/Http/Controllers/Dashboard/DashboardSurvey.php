@@ -2,25 +2,27 @@
 
 namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
-use App\Models\Instant;
 use App\Models\Job;
+use App\Models\Question;
+use App\Models\Survey;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class DashboardInstant extends Controller
+class DashboardSurvey extends Controller
 {
     
     public function index(){
-        return view('dashboard.instant',[
-            "title" => "Dashboard | Rekomendasi Karir",
-            "instants" => Instant::whereUserId(auth()->user()->id)->get(),
-            "jobs" => Job::all(),
+        return view('dashboard.survey',[
+            "title" => "Dashboard | Asesmen",
+            "surveys" => Survey::whereUserId(auth()->user()->id)->get(),
+            "questions" => Question::all(),
+            "jobs" => Job::all()
         ]);
     }
 
     public function postHandler(Request $request){
-        if($request->submit=="store"){
+        if($request->submit=="survey"){
             $res = $this->store($request);
             return back()->with($res['status'],$res['message']);
         }
@@ -39,12 +41,12 @@ class DashboardInstant extends Controller
 
     public function store(Request $request){
         $validatedData = $request->validate([
-            'prompt'=>'required',
+            'questions'=>'required',
         ]);
         $validatedData['user_id'] = auth()->user()->id;
 
-        // Make array words from user prompt
-        $prompt = $request->prompt;
+        // Make promp form user profile
+        $prompt = auth()->user()->education." ".auth()->user()->experience." ".auth()->user()->passion." ".auth()->user()->skill;
         $words = explode(" ",$prompt);
         
         // Get job from database
@@ -76,8 +78,8 @@ class DashboardInstant extends Controller
         }
 
         // Create new instant
-        Instant::create($validatedData);
-        return ['status'=>'success','message'=>'Prompt executed successfully'];
+        Survey::create($validatedData);
+        return ['status'=>'success','message'=>'Asesmen berhasil disimpan'];
         
     }
 
@@ -116,14 +118,14 @@ class DashboardInstant extends Controller
             'id'=>'required|numeric',
         ]);
 
-        $instant = Instant::find($request->id);
+        $survey = Survey::find($request->id);
 
-        //Check if the instant is found
-        if($instant){
-            Instant::destroy($request->id);    // Instant admin
-            return ['status'=>'success','message'=>'Rekomendasi berhasil dihapus'];
+        //Check if the survey is found
+        if($survey){
+            Survey::destroy($request->id);    // Delete survey
+            return ['status'=>'success','message'=>'Asesmen berhasil dihapus'];
         }else{
-            return ['status'=>'error','message'=>'Rekomendasi tidak ditemukan'];
+            return ['status'=>'error','message'=>'Asesmen tidak ditemukan'];
         }
     }
 }

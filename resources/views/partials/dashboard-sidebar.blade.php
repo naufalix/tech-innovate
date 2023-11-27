@@ -24,23 +24,23 @@
                     <span class="menu-title menu-icon"><i class="fa fa-dashboard"></i> Dashboard</span>
                   </a>
                 </div>
-                <div class="menu-item">
+                <div class="menu-item d-none">
                   <a class="menu-link py-2" href="/dashboard/instant">
                     <span class="menu-title menu-icon"><i class="mdi mdi-thumb-up"></i> Recommencations</span>
                   </a>
                 </div>
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion d-none">
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                   <span class="menu-link py-2">
-                    <span class="menu-title menu-icon"><i class="mdi mdi-thumb-up"></i> Recommencations</span>
+                    <span class="menu-title menu-icon"><i class="mdi mdi-thumb-up"></i> Rekomendasi</span>
                     <span class="menu-arrow"></span>
                   </span>
                   <div class="menu-sub menu-sub-accordion">
                     <div class="menu-item">
-                      <a class="menu-link py-2" href="#">
+                      <a class="menu-link py-2" href="/dashboard/survey">
                         <span class="menu-bullet">
                           <span class="bullet bullet-dot"></span>
                         </span>
-                        <span class="menu-title">Profile Matching</span>
+                        <span class="menu-title">Asesmen</span>
                       </a>
                     </div>
                     <div class="menu-item">
@@ -48,14 +48,14 @@
                         <span class="menu-bullet">
                           <span class="bullet bullet-dot"></span>
                         </span>
-                        <span class="menu-title">Instant R</span>
+                        <span class="menu-title">Rekomendasi Instan</span>
                       </a>
                     </div>
                   </div>
                 </div>
                 <div class="menu-item">
                   <a class="menu-link py-2" href="/dashboard/profile">
-                    <span class="menu-title menu-icon"><i class="mdi mdi-account fs-3"></i> Profile</span>
+                    <span class="menu-title menu-icon"><i class="mdi mdi-account fs-3"></i> Profil</span>
                   </a>
                 </div>
                 <br>

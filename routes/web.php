@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\AdminUser;
 use App\Http\Controllers\Dashboard\DashboardHome;
 use App\Http\Controllers\Dashboard\DashboardInstant;
 use App\Http\Controllers\Dashboard\DashboardProfile;
+use App\Http\Controllers\Dashboard\DashboardSurvey;
 
 Route::get('/', function () {
     return redirect('/dashboard');
@@ -29,9 +30,11 @@ Route::group(['prefix'=> 'dashboard','middleware'=>['auth:user']], function(){
     Route::get('/home', [DashboardHome::class, 'index']);
     Route::get('/instant', [DashboardInstant::class, 'index']);
     Route::get('/profile', [DashboardProfile::class, 'index']);
+    Route::get('/survey', [DashboardSurvey::class, 'index']);
     
     Route::post('/instant', [DashboardInstant::class, 'postHandler']);
     Route::post('/profile', [DashboardProfile::class, 'postHandler']);
+    Route::post('/survey', [DashboardSurvey::class, 'postHandler']);
 });
 
 // ADMIN AUTH
@@ -60,5 +63,6 @@ Route::group(['prefix'=> 'admin','middleware'=>['auth:admin']], function(){
 Route::group(['prefix'=> 'api'], function(){
     Route::get('admin/{admin:id}', [APIController::class, 'admin']);
     Route::get('job/{job:id}', [APIController::class, 'job']);
+    Route::get('question/{question:code}', [APIController::class, 'question']);
     Route::get('user/{user:id}', [APIController::class, 'user']);
 });

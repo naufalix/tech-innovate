@@ -20,9 +20,9 @@
             <tr class="fw-bold fs-6 text-gray-800 border-bottom border-gray-200">
               <th style="max-width: 25px">No.</th>
               <th>Deskripsi</th>
-              <th style="width: 70px">Jobs 1</th>
-              <th style="width: 70px">Jobs 2</th>
-              <th style="width: 70px">Jobs 3</th>
+              <th style="width: 70px">Rekomendasi 1</th>
+              <th style="width: 70px">Rekomendasi 2</th>
+              <th style="width: 70px">Rekomendasi 3</th>
               <th style="width: 110px">Date created</th>
               <th style="max-width: 100px;">Action</th>
             </tr>
@@ -85,5 +85,36 @@
       </div>
   </div>
 </div>
+
+<div class="modal fade" tabindex="-1" id="hapus">
+  <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Hapus Rekomendasi</h3>
+          <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+            <i class="bi bi-x-lg"></i>
+          </div>
+        </div>
+        <form class="form" method="post" action="">
+          @csrf
+          <input type="hidden" id="hi" name="id">
+          <div class="modal-body">
+            <p id="hd">Apakah anda yakin ingin menghapus hasil rekomendasi ini?</p>
+          </div>
+          
+          <div class="modal-footer">
+            <button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-danger" name="submit" value="destroy">Hapus</button>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
+
+<script>
+  function hapus(id){
+    $("#hi").val(id);
+  }
+</script>
 
 @endsection
