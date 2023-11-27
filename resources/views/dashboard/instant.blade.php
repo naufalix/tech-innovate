@@ -20,9 +20,9 @@
             <tr class="fw-bold fs-6 text-gray-800 border-bottom border-gray-200">
               <th style="max-width: 25px">No.</th>
               <th>Deskripsi</th>
-              <th style="width: 100px">Rekomendasi 1</th>
-              <th style="width: 100px">Rekomendasi 2</th>
-              <th style="width: 100px">Rekomendasi 3</th>
+              <th style="width: 110px">Rekomendasi 1</th>
+              <th style="width: 110px">Rekomendasi 2</th>
+              <th style="width: 110px">Rekomendasi 3</th>
               <th style="width: 110px">Date created</th>
               <th style="max-width: 100px;">Action</th>
             </tr>
