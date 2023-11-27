@@ -25,7 +25,7 @@
                   </a>
                 </div>
                 <div class="menu-item">
-                  <a class="menu-link py-2" href="/admin/instant">
+                  <a class="menu-link py-2" href="/admin/survey">
                     <span class="menu-title menu-icon"><i class="mdi mdi-note-text fs-3"></i> Survey Result</span>
                   </a>
                 </div>
